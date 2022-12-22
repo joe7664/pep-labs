@@ -2,8 +2,8 @@
  * TODO: switch to deque
  */
 
-import java.util.PriorityQueue;
 import java.util.Queue;
+import java.util.ArrayDeque;
 
 /**
  * Queues are FIFO - first in, first out, like a checkout line. They are used in algorithms where it is needed to keep
@@ -30,7 +30,7 @@ public class QueueExercise {
      * Stack behavior.
      */
     public Queue<String> createQueue(){
-        Queue<String> q = new PriorityQueue<String>();
+        Queue<String> q = new ArrayDeque<String>();
         return q;
     }
 
