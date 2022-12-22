@@ -1,4 +1,5 @@
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -26,8 +27,8 @@ public class MapExercise {
      * so here Integer is a wrapper for int.
      */
     public Map<Integer, String> createMap(){
-        // Map<Integer, String> map = new TreeMap<Integer, String>();
-        return null;
+        Map<Integer, String> map = new HashMap<Integer, String>();
+        return map;
     }
 
     /**
