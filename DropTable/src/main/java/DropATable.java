@@ -29,11 +29,12 @@ public class DropATable {
      */
     public void problem1(){
         String sql = FileUtil.parseSQLFile("problem1.sql");
-
+        String drop = "DROP TABLE song";//
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
             s.executeUpdate(sql);
+            s.execute(drop);//
         } catch (SQLException e) {
             System.out.println("problem1: " + e.getMessage() + '\n');
         }
