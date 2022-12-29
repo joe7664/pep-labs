@@ -64,15 +64,10 @@ public class CreateATable {
      */
     public void problem1(){
         String sql = FileUtil.parseSQLFile("problem1.sql");
-        String song = "CREATE TABLE song(\n"//
-                    + "title varchar(100),\n"//
-                    + "artist varchar(100)\n"//
-                    + ");";//
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
             s.executeUpdate(sql);
-            s.executeUpdate(song);//
         } catch (SQLException e) {
             System.out.println("problem1: " + e.getMessage() + '\n');
         }
