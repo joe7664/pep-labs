@@ -40,7 +40,7 @@ public class InsertARecord {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
-            String insert = "INSERT INTO song(title, artist) VALUES('Let it be', 'Beatles')";
+            String insert = "INSERT INTO song (title, artist) VALUES ('"+"', '"+"');";
             s.executeUpdate(insert);
             return s.executeUpdate(sql) != 0;
 
