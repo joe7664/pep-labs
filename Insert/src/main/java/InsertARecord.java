@@ -40,8 +40,6 @@ public class InsertARecord {
         try {
             Connection connection = ConnectionUtil.getConnection();
             Statement s = connection.createStatement();
-            //String insert = "INSERT INTO song (title, artist) VALUES ('Radioactive', 'Imagine Dragons');";
-            //s.executeUpdate(insert);
             return s.executeUpdate(sql) != 0;
 
         } catch (SQLException e) {
