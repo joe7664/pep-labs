@@ -1,4 +1,6 @@
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class MostCommonCharacter {
     /**
@@ -13,19 +15,28 @@ public class MostCommonCharacter {
         char key=' ';
         for(int i=0; i<str.length(); i++){
             key=str.charAt(i);
-            if(map.containsKey(key)==true){
-                map.replace(key, map.get(key)+1);
-            }
-            else{
+            if(!map.containsKey(key)){
                 map.put(key, 1);
             }
+            else{
+                int x=map.get(key);
+                map.replace(key, x, x+1);
+            }
         }
-        key=str.charAt(0);
+        char most=' ';
+        Map.Entry<Character, Integer> max = null;
+        for(Entry<Character, Integer> entry: map.entrySet()){
+            if(max == null || entry.getValue().compareTo(max.getValue())>0){
+                max=entry;
+            }
+        }
+        most=max.getKey();
+        /*key=str.charAt(0);
         for(int i=1; i<str.length(); i++){
             if(map.get(str.charAt(i))>map.get(key)){
                 key=str.charAt(i);
             }
-        }
-        return key;
+        }*/
+        return most;
     }
 }
